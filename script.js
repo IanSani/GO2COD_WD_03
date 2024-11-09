@@ -18,6 +18,9 @@
 
     }
     chooseOperation(operation){
+        this.operation=operation;
+        this.previousOperand=this.currentOperand;
+        this.currentOperand="";
 
     }
     compute(){
@@ -45,4 +48,9 @@
         calculator.appendNumber(button.innerText);
         calculator.updateDisplay();
     })
+ })
+
+ operationsButton.forEach(button=>{
+    calculator.chooseOperation(button.innerText);
+    calculator.updateDisplay();
  })
